@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ecomModelStoreContainer" CdmEntityContainer="ecomEntities">
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="ecomModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employee">
+      <EntityTypeMapping TypeName="ecomModel.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="eid" ColumnName="eid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="ecomModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="expiredate" ColumnName="expiredate" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="descr" ColumnName="descr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_product_employee" TypeName="ecomModel.FK_product_employee" StoreEntitySet="product">
+      <EndProperty Name="employee">
+        <ScalarProperty Name="eid" ColumnName="eid" />
+      </EndProperty>
+      <EndProperty Name="product">
+        <ScalarProperty Name="pid" ColumnName="pid" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="eid" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
